@@ -28,7 +28,7 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
                 </ol>
             </aside>
             <main>
-                主内容
+                <RouterView />
             </main>
         </div>
     </div>
