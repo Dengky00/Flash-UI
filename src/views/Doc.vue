@@ -1,17 +1,20 @@
 <script lang="ts" setup>
+import { Ref, inject } from 'vue';
 import Topnav from '../components/Topnav.vue';
+
+const asideVisible = inject<Ref<boolean>>('asideVisible')
+
 </script>
 
 <template>
     <div>
         <Topnav />
         <div class="content">
-            <aside>边栏</aside>
-            <aside>
+            <aside v-if="asideVisible">
                 <h2>组件列表</h2>
                 <ol>
                     <li>
-                        <RouterLink to="/doc/swich">Switch 组件</RouterLink>
+                        <RouterLink to="/doc/switch">Switch 组件</RouterLink>
                     </li>
                     <li>
                         <RouterLink to="/doc/button">Button 组件</RouterLink>
