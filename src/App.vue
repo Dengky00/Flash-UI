@@ -2,8 +2,6 @@
 </script>
 
 <template>
-  <RouterLink to="/">首页</RouterLink>|<RouterLink to="/doc">文档</RouterLink>
-  <hr>
   <RouterView />
 </template>
 
