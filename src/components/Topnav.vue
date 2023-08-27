@@ -33,7 +33,7 @@ const toggleAside = () => {
     }
 
     >.toggleAside {
-        display: inline-block;
+        display: none;
         width: 24px;
         height: 24px;
         background: red;

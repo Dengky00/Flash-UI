@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { provide, ref } from 'vue';
 
-const asideVisible = ref(false)
+const width = document.documentElement.clientWidth;
+const asideVisible = ref(width <= 500 ? false : true)
 provide('asideVisible', asideVisible)
 
 </script>
