@@ -2,7 +2,7 @@
 
 <template>
     <div>
-        Switch文档
+        <p>Button文档</p>
     </div>
 </template>
 
