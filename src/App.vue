@@ -13,8 +13,11 @@ import Demo from './components/Demo.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" /> -->
-  Hi
+  Hi|<RouterLink to="/">首页</RouterLink>|<RouterLink to="/1">1</RouterLink>
+  <hr>
   <Demo />
+  <RouterView/>
+  <router-view/>
 </template>
 
 <style scoped>
