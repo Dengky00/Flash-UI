@@ -1,23 +1,10 @@
 <script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue'
-import Demo from './components/Demo.vue'
 </script>
 
 <template>
-  <!-- <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" /> -->
-  Hi|<RouterLink to="/">首页</RouterLink>|<RouterLink to="/1">1</RouterLink>
+  <RouterLink to="/">首页</RouterLink>|<RouterLink to="/doc">文档</RouterLink>
   <hr>
-  <Demo />
-  <RouterView/>
-  <router-view/>
+  <RouterView />
 </template>
 
 <style scoped>
