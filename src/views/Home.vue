@@ -9,8 +9,8 @@ import Topnav from '../components/Topnav.vue';
             <h1>闪电UI</h1>
             <h2>一个厉害的UI框架</h2>
             <p class="actions">
-                <a href="">GitHub</a>
-                <a href="">开始</a>
+                <a href="https://github.com/Dengky00/Flash-UI">GitHub</a>
+                <RouterLink to="/doc">开始</RouterLink>
             </p>
         </div>
     </div>
