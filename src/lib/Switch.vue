@@ -12,15 +12,15 @@ function toggle() {
 </script>
 
 <template>
-    <button :class="{ checked: props.value }" @click="toggle"> <span></span> </button>
+    <button class="flash-switch" :class="{ 'flash-checked': props.value }" @click="toggle"> <span></span> </button>
     <div>{{ props.value }}</div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
 
-button {
+.flash-switch {
     height: $h;
     width: $h*2;
     border: none;
@@ -34,7 +34,7 @@ button {
         }
     }
 
-    &.checked {
+    &.flash-checked {
         background: #1890ff;
 
         &:active {

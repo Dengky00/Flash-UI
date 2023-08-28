@@ -1,6 +1,7 @@
+import "./lib/flash.scss";
+import "./style.scss";
 import { createApp } from "vue";
 import { router } from "./router";
-import "./style.scss";
 import App from "./App.vue";
 
 const app = createApp(App);

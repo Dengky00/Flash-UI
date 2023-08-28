@@ -13,12 +13,12 @@ export default {
 </script>
 
 <template>
-    <button class="flash-button" :class="`theme-${theme}`">
+    <button class="flash-button" :class="`flash-theme-${theme}`">
         <slot />
     </button>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
