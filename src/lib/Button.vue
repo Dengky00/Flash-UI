@@ -1,4 +1,6 @@
 <script lang="ts">
+import { computed } from 'vue';
+
 export default {
     // inheritAttrs: false,//继承属性,无法在<script setup>中声明,需要在普通script中使用
     props: {
@@ -6,14 +8,22 @@ export default {
             type: String,
             default: 'button'
         },
+        size: {
+            type: String,
+            default: 'normal'
+        }
     },
-    setup(props, context) {
+    setup(props) {
+        const classes = computed(() => {
+            return [`flash-theme-${props.theme}`, `flash-size-${props.size}`]
+        })
+        return { classes }
     },
 }
 </script>
 
 <template>
-    <button class="flash-button" :class="`flash-theme-${theme}`">
+    <button class="flash-button" :class="classes">
         <slot />
     </button>
 </template>
@@ -48,6 +58,41 @@ $radius: 4px;
     &:focus {
         color: $blue;
         border-color: $blue;
+    }
+
+    &.flash-theme-link {
+        border-color: transparent;
+        box-shadow: none;
+        color: $blue;
+
+        &:hover,
+        &:focus {
+            color: lighten($blue, 10%);
+        }
+    }
+
+    &.flash-theme-text {
+        border-color: transparent;
+        box-shadow: none;
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            background: darken(white, 5%);
+            ;
+        }
+    }
+
+    &.flash-size-big {
+        font-size: 24px;
+        height: 48px;
+        padding: 0 16px;
+    }
+
+    &.flash-size-small {
+        font-size: 12px;
+        height: 20px;
+        padding: 0 4px;
     }
 }
 </style>
