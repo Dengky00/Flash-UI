@@ -2,12 +2,12 @@
 import Switch from '../lib/Switch.vue'
 import { ref } from 'vue';
 
-const value = ref(false)
+const bool = ref(false)
 </script>
 
 <template>
     <div>
-        <Switch v-model:value="value" />
+        <Switch v-model:value="bool" />
     </div>
 </template>
 

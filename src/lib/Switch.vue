@@ -24,9 +24,30 @@ button {
     height: $h;
     width: $h*2;
     border: none;
-    background: grey;
+    background: #bfbfbf;
     border-radius: $h/2;
     position: relative;
+
+    &:active {
+        >span {
+            width: $h2 + 4px;
+        }
+    }
+
+    &.checked {
+        background: #1890ff;
+
+        &:active {
+            >span {
+                width: $h2 + 4px;
+                margin-left: -4px;
+            }
+        }
+
+        >span {
+            left: calc(100% - $h2 - 2px);
+        }
+    }
 
     >span {
         position: absolute;
@@ -37,14 +58,6 @@ button {
         background: white;
         border-radius: $h2 / 2;
         transition: all 250ms;
-    }
-
-    &.checked {
-        background: blue;
-
-        >span {
-            left: calc(100% - $h2 - 2px);
-        }
     }
 }
 </style>
