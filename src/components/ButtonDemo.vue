@@ -3,11 +3,14 @@ import Button from '../lib/Button.vue'
 </script>
 
 <template>
-    <div>Button 示例</div>
-    <h1>示例1</h1>
-    <div>
-        <Button>你好</Button>
-    </div>
+    <Button>默认按钮</Button>
+    <Button theme="button">普通按钮</Button>
+    <Button theme="link">链接按钮</Button>
+    <Button theme="text">文本按钮</Button>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+div {
+    border: 1px solid red;
+}
+</style>
