@@ -1,10 +1,19 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
-const checked = ref(false)
+const props = defineProps({
+    value: {
+        type: Boolean,
+        default: false
+    }
+})
+const emits = defineEmits(['update:value']);
+function toggle() {
+    emits('update:value', !props.value)
+}
 </script>
 
 <template>
-    <button :class="{ checked: checked }" @click="checked = !checked"> <span></span> </button>
+    <button :class="{ checked: props.value }" @click="toggle"> <span></span> </button>
+    <div>{{ props.value }}</div>
 </template>
 
 <style lang="scss" scoped>
@@ -27,6 +36,7 @@ button {
         width: $h2;
         background: white;
         border-radius: $h2 / 2;
+        transition: all 250ms;
     }
 
     &.checked {

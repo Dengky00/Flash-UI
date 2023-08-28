@@ -2,10 +2,6 @@
 import { Ref, inject } from 'vue';
 
 const asideVisible = inject<Ref<boolean>>('asideVisible')
-const toggleAside = () => {
-    asideVisible!.value = !asideVisible!.value
-}
-
 </script>
 
 <template>
@@ -15,7 +11,7 @@ const toggleAside = () => {
             <li>菜单1</li>
             <li>菜单2</li>
         </ul>
-        <span class="toggleAside" @click="toggleAside"></span>
+        <span class="toggleAside" @click="asideVisible = !asideVisible"></span>
     </div>
 </template>
 
