@@ -1,7 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { ref } from 'vue';
+const checked = ref(false)
+</script>
 
 <template>
-    <button> <span></span> </button>
+    <button :class="{ checked: checked }" @click="checked = !checked"> <span></span> </button>
 </template>
 
 <style lang="scss" scoped>
@@ -12,7 +15,7 @@ button {
     height: $h;
     width: $h*2;
     border: none;
-    background: blue;
+    background: grey;
     border-radius: $h/2;
     position: relative;
 
@@ -26,7 +29,9 @@ button {
         border-radius: $h2 / 2;
     }
 
-    &:hover {
+    &.checked {
+        background: blue;
+
         >span {
             left: calc(100% - $h2 - 2px);
         }
