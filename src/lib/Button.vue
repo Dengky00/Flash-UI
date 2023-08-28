@@ -16,6 +16,10 @@ export default {
             type: String,
             default: "normal"
         },
+        disabled: {
+            type: Boolean,
+            default: false,
+        },
     },
     setup(props) {
         const classes = computed(() => {
@@ -31,7 +35,7 @@ export default {
 </script>
 
 <template>
-    <button class="flash-button" :class="classes">
+    <button class="flash-button" :class="classes" :disabled="disabled">
         <slot />
     </button>
 </template>
@@ -43,6 +47,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $red: red;
+$grey: grey;
 
 .flash-button {
     box-sizing: border-box;
@@ -70,11 +75,47 @@ $red: red;
         border-color: $blue;
     }
 
+    //普通按钮
+    &.flash-theme-button {
+        &[disabled] {
+            cursor: not-allowed;
+            color: $grey;
+
+            &:hover {
+                border-color: $grey;
+            }
+        }
+
+        &.flash-level-main {
+            background: $blue;
+            color: white;
+            border-color: $blue;
+
+            &:hover,
+            &:focus {
+                background: darken($blue, 20%);
+                border-color: darken($blue, 20%);
+            }
+        }
+
+        &.flash-level-danger {
+            background: $red;
+            border-color: $red;
+            color: white;
+
+            &:hover,
+            &:focus {
+                background: darken($red, 10%);
+                border-color: darken($red, 10%);
+            }
+        }
+    }
+
     //链接按钮
     &.flash-theme-link {
         border-color: transparent;
         box-shadow: none;
-        border-bottom: 1px solid;
+        border-bottom: 1px solid $color;
         border-radius: 0;
         padding: 0;
         height: inherit;
@@ -82,6 +123,36 @@ $red: red;
         &:hover,
         &:focus {
             color: lighten($blue, 10%);
+            border-bottom: 1px solid lighten($blue, 10%);
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            color: $grey;
+            border-bottom: 1px solid $grey;
+        }
+
+        &.flash-level-main {
+            color: $blue;
+            border-bottom: 1px solid $blue;
+
+            &:hover,
+            &:focus {
+                color: darken($blue, 20%);
+                border-bottom: 1px solid darken($blue, 20%);
+            }
+        }
+
+        &.flash-level-danger {
+            color: $red;
+            border-bottom: 1px solid $red;
+
+
+            &:hover,
+            &:focus {
+                color: darken($red, 10%);
+                border-bottom: 1px solid darken($red, 10%);
+            }
         }
     }
 
@@ -95,6 +166,29 @@ $red: red;
         &:hover,
         &:focus {
             background: darken(white, 5%);
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            color: $grey;
+        }
+
+        &.flash-level-main {
+            color: $blue;
+
+            &:hover,
+            &:focus {
+                color: darken($blue, 20%);
+            }
+        }
+
+        &.flash-level-danger {
+            color: $red;
+
+            &:hover,
+            &:focus {
+                color: darken($red, 10%);
+            }
         }
     }
 
@@ -119,72 +213,6 @@ $red: red;
         &.flash-theme-link {
             height: inherit;
             padding: 0;
-        }
-    }
-
-    &.flash-theme-button {
-        &.flash-level-main {
-            background: $blue;
-            color: white;
-            border-color: $blue;
-
-            &:hover,
-            &:focus {
-                background: darken($blue, 10%);
-                border-color: darken($blue, 10%);
-            }
-        }
-
-        &.flash-level-danger {
-            background: $red;
-            border-color: $red;
-            color: white;
-
-            &:hover,
-            &:focus {
-                background: darken($red, 10%);
-                border-color: darken($red, 10%);
-            }
-        }
-    }
-
-    &.flash-theme-link {
-        &.flash-level-main {
-            color: $blue;
-
-            &:hover,
-            &:focus {
-                color: darken($blue, 10%);
-            }
-        }
-
-        &.flash-level-danger {
-            color: $red;
-
-            &:hover,
-            &:focus {
-                color: darken($red, 10%);
-            }
-        }
-    }
-
-    &.flash-theme-text {
-        &.flash-level-main {
-            color: $blue;
-
-            &:hover,
-            &:focus {
-                color: darken($blue, 10%);
-            }
-        }
-
-        &.flash-level-danger {
-            color: $red;
-
-            &:hover,
-            &:focus {
-                color: darken($red, 10%);
-            }
         }
     }
 }
