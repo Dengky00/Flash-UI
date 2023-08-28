@@ -1,8 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Button from '../lib/Button.vue'
+</script>
 
 <template>
+    <div>Button 示例</div>
+    <h1>示例1</h1>
     <div>
-        <p>Button文档</p>
+        <Button>你好</Button>
     </div>
 </template>
 
