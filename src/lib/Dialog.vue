@@ -4,23 +4,54 @@ const props = defineProps({
     visible: {
         type: Boolean,
         default: false
+    },
+    closeOnClickOverlay: {
+        type: Boolean,
+        default: true
+    },
+    ok: {
+        type: Function,
+        required: true
+    },
+    cancel: {
+        type: Function,
     }
 })
+const emit = defineEmits(['update:visible'])
+const close = () => {
+    emit('update:visible', false)
+}
+const onClickOverlay = () => {
+    if (props.closeOnClickOverlay) {
+        close()
+    }
+}
+const ok = () => {
+    if (props.ok?.() !== false) {
+        close()
+    }
+}
+const cancel = () => {
+    props.cancel?.()
+    close()
+}
 </script>
 
 <template>
     <template v-if="props.visible">
-        <div class="flash-dialog-overlay"></div>
+        <div class="flash-dialog-overlay" @click="onClickOverlay"></div>
         <div class="flash-dialog-wrapper">
             <div class="flash-dialog">
-                <header>标题 <span class="flash-dialog-close"></span></header>
+                <header>
+                    <slot name="title" />
+                    <span class="flash-dialog-close" @click="close"></span>
+                </header>
                 <main>
-                    <p>第一行字</p>
-                    <p>第二行字</p>
+                    <slot name="content" />
                 </main>
                 <footer>
-                    <Button level="main">OK</Button>
-                    <Button>Cancel</Button>
+                    <Button level="main" @click="ok">OK</Button>
+                    <Button @click="cancel">Cancel</Button>
                 </footer>
             </div>
         </div>
