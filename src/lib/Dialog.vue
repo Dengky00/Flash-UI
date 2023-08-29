@@ -39,22 +39,25 @@ const cancel = () => {
 
 <template>
     <template v-if="props.visible">
-        <div class="flash-dialog-overlay" @click="onClickOverlay"></div>
-        <div class="flash-dialog-wrapper">
-            <div class="flash-dialog">
-                <header>
-                    <slot name="title" />
-                    <span class="flash-dialog-close" @click="close"></span>
-                </header>
-                <main>
-                    <slot name="content" />
-                </main>
-                <footer>
-                    <Button level="main" @click="ok">OK</Button>
-                    <Button @click="cancel">Cancel</Button>
-                </footer>
+        <!-- 传送组件,传送至body,防止父元素z-index过小 -->
+        <Teleport to="body">
+            <div class="flash-dialog-overlay" @click="onClickOverlay"></div>
+            <div class="flash-dialog-wrapper">
+                <div class="flash-dialog">
+                    <header>
+                        <slot name="title" />
+                        <span class="flash-dialog-close" @click="close"></span>
+                    </header>
+                    <main>
+                        <slot name="content" />
+                    </main>
+                    <footer>
+                        <Button level="main" @click="ok">OK</Button>
+                        <Button @click="cancel">Cancel</Button>
+                    </footer>
+                </div>
             </div>
-        </div>
+        </Teleport>
     </template>
 </template>
 
