@@ -1,9 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Dialog from '../lib/Dialog.vue'
+</script>
 
 <template>
-    <div>
-        <p>Dialog文档</p>
-    </div>
+    <div>Dialog 示例</div>
+    <h1>示例1</h1>
+    <Dialog></Dialog>
 </template>
 
 <style lang="scss" scoped></style>
