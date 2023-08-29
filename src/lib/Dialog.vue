@@ -1,22 +1,30 @@
 <script lang="ts" setup>
 import Button from './Button.vue'
+const props = defineProps({
+    visible: {
+        type: Boolean,
+        default: false
+    }
+})
 </script>
 
 <template>
-    <div class="flash-dialog-overlay"></div>
-    <div class="flash-dialog-wrapper">
-        <div class="flash-dialog">
-            <header>标题 <span class="flash-dialog-close"></span></header>
-            <main>
-                <p>第一行字</p>
-                <p>第二行字</p>
-            </main>
-            <footer>
-                <Button level="main">OK</Button>
-                <Button>Cancel</Button>
-            </footer>
+    <template v-if="props.visible">
+        <div class="flash-dialog-overlay"></div>
+        <div class="flash-dialog-wrapper">
+            <div class="flash-dialog">
+                <header>标题 <span class="flash-dialog-close"></span></header>
+                <main>
+                    <p>第一行字</p>
+                    <p>第二行字</p>
+                </main>
+                <footer>
+                    <Button level="main">OK</Button>
+                    <Button>Cancel</Button>
+                </footer>
+            </div>
         </div>
-    </div>
+    </template>
 </template>
 
 <style lang="scss">
@@ -74,6 +82,7 @@ $border-color: #d9d9d9;
         height: 16px;
         cursor: pointer;
 
+        //界面关闭x按钮
         &::before,
         &::after {
             content: '';
