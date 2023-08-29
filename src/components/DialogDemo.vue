@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import Dialog from '../lib/Dialog.vue'
+import Button from '../lib/Button.vue'
 import { openDialog } from '../lib/openDialog';
 
 const x = ref(false)
