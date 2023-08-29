@@ -1,16 +1,21 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import Dialog from '../lib/Dialog.vue'
+import { openDialog } from '../lib/openDialog';
+
 const x = ref(false)
 function toggle() {
     x.value = !x.value
 }
 function ok() {
-    console.log(1);
+    console.log('OK!');
     return true
 }
 function cancel() {
-    console.log(2);
+    console.log('Cancel!');
+}
+function showDialog() {
+    openDialog({ title: '标题', content: '内容', ok, cancel })
 }
 </script>
 
@@ -29,6 +34,8 @@ function cancel() {
             </template>
         </Dialog>
     </div>
+    <h1>示例2</h1>
+    <Button @click="showDialog">show</Button>
     <div style="position: relative; z-index: 2; width: 300px; height: 300px; background: red;"></div>
 </template>
 

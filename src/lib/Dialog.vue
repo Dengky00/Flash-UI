@@ -11,7 +11,6 @@ const props = defineProps({
     },
     ok: {
         type: Function,
-        required: true
     },
     cancel: {
         type: Function,
