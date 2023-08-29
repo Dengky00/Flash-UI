@@ -5,9 +5,9 @@ const props = defineProps({
         default: false
     }
 })
-const emit = defineEmits(['update:value']);
+const emits = defineEmits(['update:value']);
 function toggle() {
-    emit('update:value', !props.value)
+    emits('update:value', !props.value)
 }
 </script>
 

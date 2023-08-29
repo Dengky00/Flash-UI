@@ -16,9 +16,9 @@ const props = defineProps({
         type: Function,
     }
 })
-const emit = defineEmits(['update:visible'])
+const emits = defineEmits(['update:visible'])
 const close = () => {
-    emit('update:visible', false)
+    emits('update:visible', false)
 }
 const onClickOverlay = () => {
     if (props.closeOnClickOverlay) {
