@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { Ref, inject } from 'vue';
+import icon from './icon.vue';
 
 const asideVisible = inject<Ref<boolean>>('asideVisible')
 </script>
@@ -7,9 +8,7 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
 <template>
     <div class="topnav">
         <div class="logo">
-            <svg>
-                <use xlink:href="#icon-flash"></use>
-            </svg>
+            <icon name="flash"></icon>
         </div>
         <ul class="menu">
             <li>菜单1</li>
