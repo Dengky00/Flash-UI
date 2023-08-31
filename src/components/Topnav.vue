@@ -6,7 +6,11 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
 
 <template>
     <div class="topnav">
-        <div class="logo">LOGO</div>
+        <div class="logo">
+            <svg>
+                <use xlink:href="#icon-flash"></use>
+            </svg>
+        </div>
         <ul class="menu">
             <li>菜单1</li>
             <li>菜单2</li>
