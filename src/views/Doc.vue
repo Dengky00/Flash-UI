@@ -84,7 +84,7 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
 aside {
     background: lightblue;
     width: 150px;
-    padding: 16px;
+    padding: 16px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -93,16 +93,50 @@ aside {
 
     >h2 {
         margin-bottom: 4px;
+        padding: 0 16px;
     }
 
     >ol {
         >li {
-            padding: 4px 0;
+            >a {
+                display: block;
+                padding: 4px 16px;
+                text-decoration: none;
+                position: relative;
+            }
         }
     }
 }
 
 main {
     overflow: auto;
+}
+
+//选中背景渐变动画
+a:before,
+a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: -2;
+}
+
+a:before {
+    z-index: -1;
+    background: white;
+    transition: all .5s;
+}
+
+a.router-link-active {
+    background: transparent;
+    z-index: 1;
+}
+
+a.router-link-active:before,
+a.router-link-active:after {
+    width: 100%;
 }
 </style>
