@@ -11,6 +11,18 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
         <Topnav class="nav" toggleMenuButtonVisible />
         <div class="content">
             <aside v-if="asideVisible">
+                <h2>文档</h2>
+                <ol>
+                    <li>
+                        <RouterLink to="/doc/intro">介绍</RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/doc/install">安装</RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/doc/get-started">开始使用</RouterLink>
+                    </li>
+                </ol>
                 <h2>组件列表</h2>
                 <ol>
                     <li>
