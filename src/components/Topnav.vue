@@ -2,19 +2,26 @@
 import { Ref, inject } from 'vue';
 import icon from './icon.vue';
 
+const props = defineProps({
+    toggleMenuButtonVisible: {
+        type: Boolean,
+        default: false
+    }
+})
 const asideVisible = inject<Ref<boolean>>('asideVisible')
 </script>
 
 <template>
     <div class="topnav">
-        <div class="logo">
-            <icon name="flash" class="flash"></icon>
-        </div>
+        <RouterLink to="/" class="logo">
+            <icon name="flash" class="flash" />
+        </RouterLink>
         <ul class="menu">
-            <li>菜单1</li>
-            <li>菜单2</li>
+            <li>
+                <router-link to="/doc">文档</router-link>
+            </li>
         </ul>
-        <span class="toggleAside" @click="asideVisible = !asideVisible"></span>
+        <icon name="menu" class="toggleAside" @click="asideVisible = !asideVisible" v-if="props.toggleMenuButtonVisible" />
     </div>
 </template>
 
@@ -44,9 +51,9 @@ $color: #007974;
 
     >.toggleAside {
         display: none;
-        width: 24px;
-        height: 24px;
-        background: red;
+        width: 32px;
+        height: 32px;
+        // background: red;
         position: absolute;
         left: 16px;
         top: 50%;
