@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import Topnav from '../components/Topnav.vue';
-import icon from '../components/icon.vue';
 </script>
 
 <template>
@@ -19,22 +18,22 @@ import icon from '../components/icon.vue';
         <div class="features">
             <ul>
                 <li>
-                    <icon name="vue" class="svg" />
+                    <Icon name="vue" class="svg" />
                     <h3>基于 Vue 3</h3>
                     <p>使用了最新的 Vue 3 Composition API</p>
                 </li>
                 <li>
-                    <icon name="typescript" class="svg" />
+                    <Icon name="typescript" class="svg" />
                     <h3>基于 TypeScript </h3>
                     <p>源代码采用 TypeScript 书写（非严格检查）</p>
                 </li>
                 <li>
-                    <icon name="light" class="svg" />
+                    <Icon name="light" class="svg" />
                     <h3>文档完整</h3>
                     <p>所有功能都有细致易懂的讲解说明</p>
                 </li>
                 <li>
-                    <icon name="code" class="svg" />
+                    <Icon name="code" class="svg" />
                     <h3>代码易读</h3>
                     <p>每个组件的源代码都极其简洁</p>
                 </li>

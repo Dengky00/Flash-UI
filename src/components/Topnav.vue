@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { Ref, inject } from 'vue';
-import icon from './icon.vue';
 
 const props = defineProps({
     toggleMenuButtonVisible: {
@@ -14,14 +13,14 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
 <template>
     <div class="topnav">
         <RouterLink to="/" class="logo">
-            <icon name="flash" class="flash" />
+            <Icon name="flash" class="flash" />
         </RouterLink>
         <ul class="menu">
             <li>
                 <router-link to="/doc">文档</router-link>
             </li>
         </ul>
-        <icon name="menu" class="toggleAside" @click="asideVisible = !asideVisible" v-if="props.toggleMenuButtonVisible" />
+        <Icon name="menu" class="toggleAside" @click="asideVisible = !asideVisible" v-if="props.toggleMenuButtonVisible" />
     </div>
 </template>
 
