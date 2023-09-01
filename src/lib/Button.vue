@@ -71,7 +71,7 @@ $grey: grey;
     transition: all 250ms;
 
     &+& {
-        margin-left: 8px;
+        margin-left: 16px;
     }
 
     &:hover,
