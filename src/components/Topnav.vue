@@ -35,7 +35,7 @@ $color: #007974;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 20;
 
     >.logo {
         max-width: 6em;
@@ -52,7 +52,6 @@ $color: #007974;
         display: none;
         width: 32px;
         height: 32px;
-        // background: red;
         position: absolute;
         left: 16px;
         top: 50%;
