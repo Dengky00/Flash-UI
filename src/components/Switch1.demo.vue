@@ -1,3 +1,4 @@
+<demo>常规用法</demo>
 <script lang="ts" setup>
 import Switch from '../lib/Switch.vue'
 import { ref } from 'vue'

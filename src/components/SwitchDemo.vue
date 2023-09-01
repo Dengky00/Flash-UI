@@ -16,11 +16,11 @@ import Button from '../lib/Button.vue'
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+                <pre>{{ Switch1Demo.__sourceCode }}</pre>
             </div>
         </div>
         <div class="demo">
-            <h2>支持 disabled </h2>
+            <h2>支持 disabled</h2>
             <div class="demo-component">
                 <Switch2Demo />
             </div>
@@ -28,7 +28,7 @@ import Button from '../lib/Button.vue'
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+                <pre>{{ Switch2Demo.__sourceCode }}</pre>
             </div>
         </div>
     </div>
