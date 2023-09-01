@@ -13,7 +13,6 @@ function toggle() {
 
 <template>
     <button class="flash-switch" :class="{ 'flash-checked': props.value }" @click="toggle"> <span></span> </button>
-    <div>{{ props.value }}</div>
 </template>
 
 <style lang="scss">
