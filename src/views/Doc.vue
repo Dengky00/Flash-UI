@@ -3,7 +3,6 @@ import { Ref, inject } from 'vue';
 import Topnav from '../components/Topnav.vue';
 
 const asideVisible = inject<Ref<boolean>>('asideVisible')
-
 </script>
 
 <template>
@@ -125,9 +124,9 @@ a:after {
 }
 
 a:before {
-    z-index: -1;
     background: white;
     transition: all .5s;
+    z-index: -1;
 }
 
 a.router-link-active {
