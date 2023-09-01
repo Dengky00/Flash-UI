@@ -1,18 +1,11 @@
 <script lang="ts" setup>
+import md from '../markdown/install.md?raw'//将markdown文件转换为字符串导入
+import MarkdownIt from 'markdown-it'
+const markdown = new MarkdownIt()
 </script>
 
 <template>
-    <article class="markdown-body">
-        <h1>安装</h1>
-        <p>打开终端运行下列命令：</p>
-        <pre><code>npm install king-ui</code></pre>
-        <p>或</p>
-        <pre><code>yarn add king-ui</code></pre>
-
-        <p>
-            下一节：<a href="#/doc/get-started">开始使用</a>
-        </p>
-    </article>
+    <article class="markdown-body" v-html="markdown.render(md)" />
 </template>
 
 <style lang="scss" scoped></style>
