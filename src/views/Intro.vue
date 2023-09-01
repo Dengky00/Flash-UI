@@ -12,4 +12,4 @@
     </article>
 </template>
 
-<script lang="scss" scoped></script>
+<style lang="scss" scoped></style>
