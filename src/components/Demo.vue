@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import Button from '../lib/Button.vue'
+import { computed, ref } from 'vue';
 import 'prismjs';
 import 'prismjs/themes/prism-okaidia.css'
+import Button from '../lib/Button.vue'
 const Prism = (window as any).Prism
 const props = defineProps({
     component: {
@@ -9,6 +10,8 @@ const props = defineProps({
         required: true
     }
 })
+const codeVisible = ref(false)
+const html = computed(() => Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html'))
 </script>
 
 <template>
@@ -18,13 +21,11 @@ const props = defineProps({
             <component :is="props.component" />
         </div>
         <div class="demo-actions">
-            <Button>查看代码</Button>
+            <Button @click="codeVisible = !codeVisible">查看代码</Button>
         </div>
-        <div class="demo-code">
-            <pre class="language-html"
-                v-html="Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')" />
+        <div class="demo-code" v-if="codeVisible">
+            <pre class="language-html" v-html="html" />
         </div>
-
     </div>
 </template>
     
