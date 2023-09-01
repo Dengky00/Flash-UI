@@ -11,5 +11,3 @@ import Dialog2Demo from './Dialog2.demo.vue';
         <Demo :component="Dialog2Demo" />
     </div>
 </template>
-
-<style lang="scss" scoped></style>
