@@ -10,9 +10,12 @@ import InputDemo from "./components/InputDemo.vue";
 import CarouselDemo from "./components/CarouselDemo.vue";
 import CityDemo from "./components/CityDemo.vue";
 import Markdown from "./components/Markdown.vue";
+import Intro from "./markdown/intro.md?raw";
+import Install from "./markdown/install.md?raw";
+import GetStarted from "./markdown/get-started.md?raw";
 
 const history = createWebHashHistory();
-const md = (filename: string) => h(Markdown, { md: filename, key: filename });
+const md = (content: string) => h(Markdown, { md: content, key: content });
 export const router = createRouter({
   history,
   routes: [
@@ -22,9 +25,9 @@ export const router = createRouter({
       component: Doc,
       children: [
         { path: "", redirect: "/doc/intro" },
-        { path: "intro", component: md("intro") },
-        { path: "get-started", component: md("get-started") },
-        { path: "install", component: md("install") },
+        { path: "intro", component: md(Intro) },
+        { path: "install", component: md(Install) },
+        { path: "get-started", component: md(GetStarted) },
         { path: "switch", component: SwitchDemo },
         { path: "button", component: ButtonDemo },
         { path: "dialog", component: DialogDemo },
