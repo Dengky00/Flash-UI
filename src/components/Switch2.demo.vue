@@ -6,5 +6,6 @@ const bool = ref(false)
 </script>
 
 <template>
+    <h4>disabled属性:可禁用开关</h4>
     <Switch v-model:value="bool" disabled />
 </template>

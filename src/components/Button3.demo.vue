@@ -4,6 +4,7 @@ import Button from "../lib/Button.vue";
 </script>
 
 <template>
+    <h4>level属性:决定按钮等级,默认普通等级</h4>
     <table>
         <tr>
             <td><Button level="main">重要</Button></td>

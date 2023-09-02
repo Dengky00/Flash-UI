@@ -4,6 +4,7 @@ import Button from "../lib/Button.vue";
 </script>
 
 <template>
+    <h4>size属性:决定按钮大小,默认普通大小</h4>
     <table>
         <tr>
             <td><Button size="big">大大大</Button></td>

@@ -6,5 +6,6 @@ const bool = ref(false)
 </script>
 
 <template>
+    <h4>value属性:双向绑定布尔值</h4>
     <Switch v-model:value="bool" />
 </template>

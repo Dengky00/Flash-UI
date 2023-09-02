@@ -7,6 +7,7 @@ const selected = ref('导航1')
 </script>
 
 <template>
+    <h4>selected属性:双向绑定选中tab</h4>
     <Tabs v-model:selected="selected">
         <Tab title="导航1">内容1</Tab>
         <Tab title="导航22">内容22</Tab>

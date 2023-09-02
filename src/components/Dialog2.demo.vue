@@ -14,6 +14,7 @@ const showDialog = () => {
 
 <template>
     <div>
+        <h4>openDialog函数:无需引入Dialog,可快速配置简易Dialog的title、content、ok、cancel</h4>
         <Button @click="showDialog">一键打开</Button>
     </div>
 </template>

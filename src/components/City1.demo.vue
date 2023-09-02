@@ -1,10 +1,7 @@
-<demo>
-  常规用法
-</demo>
-
+<demo>常规用法</demo>
 <template>
-  <h3>fullLocation:默认显示的城市</h3>
-  <h3>change事件:可以获得选择的城市</h3>
+  <h4>fullLocation:决定展示的城市</h4>
+  <h4>change事件:可以获得选择的城市</h4>
   <City :fullLocation="fullLocation" @change="changeCity"></City>
 </template>
 
@@ -22,9 +19,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-</style>

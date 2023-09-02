@@ -1,5 +1,6 @@
 <demo>常规用法</demo>
 <template>
+  <h4>sliders属性:存放轮播图片数组</h4>
   <div class="home-banner">
     <Carousel :sliders="sliders" />
   </div>
@@ -36,7 +37,7 @@ export default {
 @media (max-width: 500px) {
   .home-banner {
     width: 100%;
-    height: 241px;
+    height: 240px;
   }
 }
 </style>

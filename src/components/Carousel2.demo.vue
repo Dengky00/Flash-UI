@@ -1,7 +1,7 @@
 <demo>自动轮播</demo>
 <template>
-  <h3>autoPlay:自动轮播</h3>
-  <h3>duration:自动轮播的间隔时长(ms)</h3>
+  <h4>autoPlay:决定是否自动轮播</h4>
+  <h4>duration:决定自动轮播的间隔时长(ms)</h4>
   <div class="home-banner">
     <Carousel :sliders="sliders" :autoPlay="true" :duration="1500" />
   </div>
@@ -35,15 +35,10 @@ export default {
   height: 500px;
 }
 
-h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
 @media (max-width: 500px) {
   .home-banner {
     width: 100%;
-    height: 241px;
+    height: 240px;
   }
 }
 </style>

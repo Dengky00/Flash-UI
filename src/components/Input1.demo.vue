@@ -1,8 +1,6 @@
-<demo>
-基础用法-双向绑定
-</demo>
-
+<demo>常规使用</demo>
 <template>
+  <h4>value属性:支持双向绑定</h4>
   <Input placeholder="请输入内容" v-model:value="text" />
   <span class="picked">{{ text }}</span>
 </template>

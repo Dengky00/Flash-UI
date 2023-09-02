@@ -1,8 +1,6 @@
-<demo>
-支持类型
-</demo>
-
+<demo>支持类型</demo>
 <template>
+  <h4>type属性:决定输入框类型,默认text</h4>
   <Input placeholder="文本类型"  v-model:value="text"/>
   <span class="picked">
     {{text}}

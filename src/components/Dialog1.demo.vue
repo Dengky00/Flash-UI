@@ -10,6 +10,9 @@ const cancel = () => { }
 </script>
 
 <template>
+    <h4>closeOnClickOverlay属性:决定点击对话框外是否关闭,默认false</h4>
+    <h4>ok函数:点击对话框ok键触发,返回true时关闭对话框</h4>
+    <h4>cancel函数:点击对话框Cancel键触发</h4>
     <div>
         <Button @click="visible = !visible">打开对话框</Button>
         <Dialog v-model:visible="visible" :closeOnClickOverlay="false" :ok="ok" :cancel="cancel">

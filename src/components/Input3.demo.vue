@@ -1,8 +1,6 @@
-<demo>
-支持禁用
-</demo>
-
+<demo>支持禁用</demo>
 <template>
+  <h4>disabled属性:可禁用输入框</h4>
   <Input placeholder="禁用" v-model:value="text" disabled />
 </template>
 
