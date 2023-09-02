@@ -9,35 +9,38 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
     <div class="layout">
         <Topnav class="nav" toggleMenuButtonVisible />
         <div class="content">
-            <aside v-if="asideVisible">
-                <h2>文档</h2>
-                <ol>
-                    <li>
-                        <RouterLink to="/doc/intro">介绍</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/doc/install">安装</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/doc/get-started">开始使用</RouterLink>
-                    </li>
-                </ol>
-                <h2>组件列表</h2>
-                <ol>
-                    <li>
-                        <RouterLink to="/doc/switch">Switch 组件</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/doc/button">Button 组件</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/doc/dialog">Dialog 组件</RouterLink>
-                    </li>
-                    <li>
-                        <RouterLink to="/doc/tabs">Tabs 组件</RouterLink>
-                    </li>
-                </ol>
-            </aside>
+            <Transition leaveActiveClass=leaveActive enterActiveClass=enterActive leaveToClass=leaveTo
+                enterFromClass=enterFrom>
+                <aside v-if="asideVisible">
+                    <h2>文档</h2>
+                    <ol>
+                        <li>
+                            <RouterLink to="/doc/intro">介绍</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink to="/doc/install">安装</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink to="/doc/get-started">开始使用</RouterLink>
+                        </li>
+                    </ol>
+                    <h2>组件列表</h2>
+                    <ol>
+                        <li>
+                            <RouterLink to="/doc/switch">Switch 组件</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink to="/doc/button">Button 组件</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink to="/doc/dialog">Dialog 组件</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink to="/doc/tabs">Tabs 组件</RouterLink>
+                        </li>
+                    </ol>
+                </aside>
+            </Transition>
             <main>
                 <RouterView />
             </main>
@@ -69,10 +72,6 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
 .content {
     display: flex;
 
-    >aside {
-        flex-shrink: 0;
-    }
-
     >main {
         flex-grow: 1;
         padding: 16px;
@@ -81,7 +80,8 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
 }
 
 aside {
-    background: lightblue;
+    flex-shrink: 0;
+    background: #F8FDCF;
     width: 150px;
     padding: 16px 0;
     position: fixed;
@@ -89,7 +89,8 @@ aside {
     left: 0;
     padding-top: 70px;
     height: 100%;
-    z-index:10;
+    z-index: 10;
+    box-shadow: 0 0 4px 0 fade-out(black, 0.6);
 
     >h2 {
         margin-bottom: 4px;
@@ -138,5 +139,17 @@ a.router-link-active {
 a.router-link-active:before,
 a.router-link-active:after {
     width: 100%;
+}
+
+//边栏点击动画
+.enterFrom,
+.leaveTo {
+    transform: translateX(calc(-100%));
+    opacity: 0;
+}
+
+.enterActive,
+.leaveActive {
+    transition: all 0.5s;
 }
 </style>

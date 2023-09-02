@@ -25,27 +25,36 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
 </template>
 
 <style lang="scss" scoped>
-$color: #007974;
+$color: #e67700;
 
 .topnav {
     color: $color;
-    display: flex;
-    padding: 16px;
     position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 8px 16px;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 20;
+    background: #fff4e6;
+    box-shadow: 0 0 6px 0 fade-out(black, 0.6);
 
     >.logo {
-        max-width: 6em;
-        margin-right: auto;
         font-size: 0;
 
         .flash {
-            width: 32px;
-            height: 32px;
+            width: 42px;
+            height: 42px;
         }
+    }
+
+    >.menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        white-space: nowrap; //用于处理元素内的空白符:不会换行
+        flex-wrap: nowrap;
     }
 
     >.toggleAside {
@@ -56,18 +65,6 @@ $color: #007974;
         left: 16px;
         top: 50%;
         transform: translateY(-50%);
-    }
-
-    >.menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        white-space: nowrap; //用于处理元素内的空白符:不会换行
-        flex-wrap: nowrap;
-
-        >li {
-            margin: 0 1em;
-        }
     }
 
     @media (max-width:500px) {

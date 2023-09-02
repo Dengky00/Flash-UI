@@ -7,8 +7,8 @@ import Topnav from '../components/Topnav.vue';
         <div class="topnavAndBanner">
             <Topnav />
             <div class="banner">
-                <h1>闪电UI</h1>
-                <h2>一个使开发快速的UI框架</h2>
+                <h1>Flash-UI</h1>
+                <h2>一款使开发如闪电般快速的UI库</h2>
                 <p class="actions">
                     <a href="https://github.com/Dengky00/Flash-UI">GitHub</a>
                     <RouterLink to="/doc">开始</RouterLink>
@@ -43,12 +43,12 @@ import Topnav from '../components/Topnav.vue';
 </template>
 
 <style lang="scss" scoped>
-$green: #02bcb0;
+$green: #f59f00;
 $border-radius: 8px;
-$color: #007974;
+$color: #e67700;
 
 .topnavAndBanner {
-    background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+    background: radial-gradient(circle, #fff3bf 0%, #ffe066 100%);
     clip-path: ellipse(70% 60% at 50% 40%);
 
     .banner {
@@ -97,7 +97,7 @@ $color: #007974;
 
         >ul {
             >li {
-                width: 33.3333%;
+                width: 25%;
             }
         }
     }

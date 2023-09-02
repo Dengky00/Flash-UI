@@ -21,7 +21,8 @@ const html = computed(() => Prism.highlight(props.component.__sourceCode, Prism.
             <component :is="props.component" />
         </div>
         <div class="demo-actions">
-            <Button @click="codeVisible = !codeVisible">查看代码</Button>
+            <Button v-if="codeVisible" @click="codeVisible = !codeVisible">隐藏代码</Button>
+            <Button v-else @click="codeVisible = !codeVisible">查看代码</Button>
         </div>
         <div class="demo-code" v-if="codeVisible">
             <pre class="language-html" v-html="html" />
