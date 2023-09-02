@@ -31,6 +31,7 @@ const vueCustomBlockTransformsPlugin = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/Flash-UI/dist/",
   plugins: [
     vue(),
     vueCustomBlockTransformsPlugin,
