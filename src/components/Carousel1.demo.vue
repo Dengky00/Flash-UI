@@ -6,7 +6,8 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+//@ts-nocheck
 import { reactive } from 'vue'
 import Carousel from '../lib/Carousel.vue'
 import imgUrl1 from '../assets/1.jpg'

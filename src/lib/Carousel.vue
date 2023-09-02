@@ -26,7 +26,8 @@
     </div>
 </template>
   
-<script>
+<script lang="ts">
+//@ts-nocheck
 import { ref, watch, onUnmounted } from 'vue'
 export default {
     props: {

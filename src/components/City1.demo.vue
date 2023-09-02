@@ -5,7 +5,8 @@
   <City :fullLocation="fullLocation" @change="changeCity"></City>
 </template>
 
-<script>
+<script lang="ts">
+//@ts-nocheck
 import { ref } from 'vue'
 import City from '../lib/City.vue'
 export default {

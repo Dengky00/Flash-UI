@@ -10,7 +10,8 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
+//@ts-nocheck
 import { computed, reactive, ref } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import axios from 'axios'
