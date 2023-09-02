@@ -398,13 +398,13 @@ Flash-UI 是一款基于 Vue 3 和 TypeScript 的前端 UI 组件库。\r
 打开终端运行下列命令：\r
 \r
 \`\`\`\r
-npm install flash-ui\r
+npm install the-flash-ui\r
 \`\`\`\r
 \r
 或\r
 \r
 \`\`\`\r
-yarn add flash-ui\r
+yarn add the-flash-ui\r
 \`\`\`\r
 \r
 下一节：[开始使用](#/doc/get-started)\r
@@ -415,7 +415,7 @@ yarn add flash-ui\r
 然后在你的代码中写入下面的代码\r
 \r
 \`\`\`\r
-import {Button, Tabs, Switch, Dialog, Carousel, City, Input } from "flash-ui"\r
+import {Button, Tabs, Switch, Dialog, Carousel, City, Input } from "the-flash-ui"\r
 \`\`\`\r
 \r
 就可以使用我提供的组件了。\r
@@ -431,7 +431,7 @@ import {Button, Tabs, Switch, Dialog, Carousel, City, Input } from "flash-ui"\r
     </div>\r
 </template>\r
 <script>\r
-import { Button, Tabs, Switch, Dialog, Carousel, City, Input } from "flash-ui"\r
+import { Button, Tabs, Switch, Dialog, Carousel, City, Input } from "the-flash-ui"\r
 export default {\r
     components: { Button }\r
 }\r

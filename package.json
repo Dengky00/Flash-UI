@@ -1,7 +1,22 @@
 {
-  "name": "flash-ui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "the-flash-ui",
+  "private": false,
+  "version": "0.0.3",
+  "files": [
+    "dist"
+  ],
+  "main": ".dist/flash-ui.umd.cjs",
+  "module": "./dist/flash-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/flash-ui.js",
+      "require": "./dist/flash-ui.umd.cjs"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -23,6 +38,7 @@
     "sass": "^1.66.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
+    "vite-plugin-libcss": "^1.1.1",
     "vite-plugin-svg-icons": "^2.0.1",
     "vue-tsc": "^1.8.5"
   }

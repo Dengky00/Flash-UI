@@ -5,6 +5,7 @@ import path from "path";
 import fs from "fs";
 import { baseParse } from "@vue/compiler-core";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+// import libCss from "vite-plugin-libcss";
 
 const vueCustomBlockTransformsPlugin = {
   name: "vue-custom-block",
@@ -31,13 +32,35 @@ const vueCustomBlockTransformsPlugin = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  //用于部署在github直接访问
   base: "/Flash-UI/dist/",
   plugins: [
     vue(),
+    // libCss(),
     vueCustomBlockTransformsPlugin,
     createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
       symbolId: "icon-[dir]-[name]",
     }),
   ],
+  //配置库模式
+  // build: {
+  //   cssCodeSplit: true,
+  //   lib: {
+  //     entry: path.resolve(__dirname, "src/lib/index.ts"),
+  //     name: "FlashUI",
+  //     // 构建好的文件名（不包括文件后缀）
+  //     fileName: "flash-ui",
+  //   },
+  //   rollupOptions: {
+  //     // 确保外部化处理那些你不想打包进库的依赖
+  //     external: ["vue"],
+  //     output: {
+  //       // 在 UMD 构建模式下,全局模式下为这些外部化的依赖提供一个全局变量
+  //       globals: {
+  //         FlashUI: "FlashUI",
+  //       },
+  //     },
+  //   },
+  // },
 });
