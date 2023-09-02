@@ -38,6 +38,15 @@ const asideVisible = inject<Ref<boolean>>('asideVisible')
                         <li>
                             <RouterLink to="/doc/tabs">Tabs 组件</RouterLink>
                         </li>
+                        <li>
+                            <RouterLink to="/doc/input">Input 组件</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink to="/doc/carousel">Carousel 组件</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink to="/doc/city">City 组件</RouterLink>
+                        </li>
                     </ol>
                 </aside>
             </Transition>
@@ -93,8 +102,8 @@ aside {
     box-shadow: 0 0 4px 0 fade-out(black, 0.6);
 
     >h2 {
-        margin-bottom: 4px;
-        padding: 0 16px;
+        // margin-bottom: 4px;
+        padding: 16px 16px 0px 16px;
     }
 
     >ol {

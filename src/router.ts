@@ -6,6 +6,9 @@ import SwitchDemo from "./components/SwitchDemo.vue";
 import ButtonDemo from "./components/ButtonDemo.vue";
 import DialogDemo from "./components/DialogDemo.vue";
 import TabsDemo from "./components/TabsDemo.vue";
+import InputDemo from "./components/InputDemo.vue";
+import CarouselDemo from "./components/CarouselDemo.vue";
+import CityDemo from "./components/CityDemo.vue";
 import Markdown from "./components/Markdown.vue";
 
 const history = createWebHashHistory();
@@ -18,7 +21,7 @@ export const router = createRouter({
       path: "/doc",
       component: Doc,
       children: [
-        { path: "", redirect: '/doc/intro' },
+        { path: "", redirect: "/doc/intro" },
         { path: "intro", component: md("intro") },
         { path: "get-started", component: md("get-started") },
         { path: "install", component: md("install") },
@@ -26,6 +29,9 @@ export const router = createRouter({
         { path: "button", component: ButtonDemo },
         { path: "dialog", component: DialogDemo },
         { path: "tabs", component: TabsDemo },
+        { path: "input", component: InputDemo },
+        { path: "carousel", component: CarouselDemo },
+        { path: "city", component: CityDemo },
       ],
     },
   ],
